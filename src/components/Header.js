@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { Suspense } from 'react';
+import BeatLoader from 'react-spinners/BeatLoader';
 
 import './Header.css';
 import Quote from './Quote';
@@ -6,11 +7,12 @@ import Quote from './Quote';
 function Header() {
 	return (
 		<div className='header'>
-			<h1 className='header__title'>Todos App</h1>
-			<div>
-				{/* Quote */}
-				<Quote />
-			</div>
+			<Suspense fallback={<BeatLoader size={10} margin={5} />}>
+				<div>
+					{/* Quote */}
+					<Quote />
+				</div>
+			</Suspense>
 		</div>
 	);
 }

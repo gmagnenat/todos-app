@@ -1,0 +1,26 @@
+.todoItem {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.todoItem__task > input {
+	text-transform: capitalize;
+	line-height: 2.5;
+	padding-left: 1rem;
+	font-size: 1.8rem;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	width: 20rem;
+	margin-right: 2rem;
+}
+
+.todoItem__completed {
+	text-decoration: line-through;
+	color: green;
+}
+
+.MuiIconButton-root {
+	padding: 5px !important;
+}

@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil';
+import { selector } from 'recoil';
 
 const currentQuoteQuery = selector({
 	key: 'currentQuote',
@@ -11,3 +11,5 @@ const currentQuoteQuery = selector({
 		return quote;
 	},
 });
+
+export default currentQuoteQuery;

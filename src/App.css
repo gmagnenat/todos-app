@@ -1,4 +1,32 @@
 .app {
-	width: 600px;
-	margin: 0 auto;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.app__title {
+	font-size: 4rem;
+	color: rgb(82, 87, 206);
+	margin: 2rem 0;
+	text-align: center;
+}
+
+.app__container {
+	margin-top: 5rem;
+	padding: 1rem;
+	background-color: white;
+	background: linear-gradient(
+		to bottom right,
+		rgba(255, 255, 255, 0.9),
+		rgba(255, 255, 255, 0.2)
+	);
+	z-index: 3;
+	backdrop-filter: blur(2rem);
+	min-height: 80vh;
+	border-radius: 2rem;
+	border: 1px solid white;
+	width: 85%;
+	max-width: 600px;
 }

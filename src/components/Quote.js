@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react';
-import { atom, useRecoilState } from 'recoil';
-
+import { useRecoilValue } from 'recoil';
 import './Quote.css';
-import { currentQuoteQuery } from '../Atoms/quoteState';
-
-// type.fit/api/quotes
+import currentQuoteQuery from '../Atoms/quoteState';
 
 function Quote() {
-	// const quote = useRecoilValue(currentQuoteQuery);
+	const quote = useRecoilValue(currentQuoteQuery);
 	return (
 		<div className='quote'>
-			<h3 className='quote__text'>This is the quote</h3>
+			<p className='quote__body'>
+				{quote.text}
+				<span>{quote.author ? quote.author : 'Unknown'} </span>
+			</p>
 		</div>
 	);
 }
