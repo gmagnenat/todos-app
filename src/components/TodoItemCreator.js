@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSetRecoilState } from 'recoil';
+import React, { useState, useEffect } from 'react';
+import { useRecoilState } from 'recoil';
 import todoListState from '../Atoms/todoListState';
 import { v4 as uuidv4 } from 'uuid';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
@@ -8,7 +8,7 @@ import './TodoItemCreator.css';
 
 function TodoItemCreator() {
 	const [inputValue, setInputValue] = useState('');
-	const setTodoList = useSetRecoilState(todoListState);
+	const [todoList, setTodoList] = useRecoilState(todoListState);
 
 	const addItem = e => {
 		e.preventDefault();
@@ -28,6 +28,12 @@ function TodoItemCreator() {
 	const onChange = ({ target: { value } }) => {
 		setInputValue(value);
 	};
+
+	useEffect(() => {
+		if (todoList.length > 0) {
+			localStorage.setItem('storedTodos', JSON.stringify(todoList));
+		}
+	}, [todoList]);
 
 	return (
 		<div className='form'>

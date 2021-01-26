@@ -4,6 +4,11 @@
 	margin-bottom: 1rem;
 }
 
+.todoItem__task {
+	width: 70%;
+	margin: 0 auto;
+}
+
 .todoItem__task > input {
 	text-transform: capitalize;
 	line-height: 2.5;
@@ -12,7 +17,7 @@
 	border-radius: 10px;
 	outline: none;
 	border: none;
-	width: 20rem;
+	width: 95%;
 	margin-right: 2rem;
 }
 

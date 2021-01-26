@@ -7,13 +7,34 @@ import FlipMove from 'react-flip-move';
 
 function TodoList() {
 	const todoList = useRecoilValue(todoListState);
+
 	return (
 		<div className='todoList'>
-			<FlipMove>
-				{todoList.map((todoItem, index) => (
+			<FlipMove
+				staggerDelayBy={150}
+				enterAnimation={{
+					from: {
+						transform: 'rotateX(180deg)',
+						opacity: 0.1,
+					},
+					to: {
+						transform: '',
+					},
+				}}
+				leaveAnimation={{
+					from: {
+						transform: '',
+					},
+					to: {
+						transform: 'rotateX(-120deg)',
+						opacity: 0.1,
+					},
+				}}
+			>
+				{todoList.map(todoItem => (
 					<TodoItem
 						className='todoList__item'
-						key={index}
+						key={todoItem.id}
 						item={todoItem}
 					/>
 				))}

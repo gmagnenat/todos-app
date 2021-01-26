@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import TodoList from './components/TodoList';
 import TodoItemCreator from './components/TodoItemCreator';
+import { useSetRecoilState } from 'recoil';
+import todoListState from './Atoms/todoListState';
 
 function App() {
+	const setTodoList = useSetRecoilState(todoListState);
 	// grab data from local storage
-
-	// update todo in local storage
+	useEffect(() => {
+		const storedTodos = JSON.parse(localStorage.getItem('storedTodos'));
+		storedTodos && setTodoList([...storedTodos]);
+	});
 
 	return (
 		<div className='app'>

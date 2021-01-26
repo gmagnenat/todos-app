@@ -20,7 +20,8 @@ const GreenCheckbox = withStyles({
 	checked: {},
 })(props => <Checkbox color='default' {...props} />);
 
-const TodoItem = forwardRef((item, ref) => {
+const TodoItem = forwardRef((props, ref) => {
+	const { item } = props;
 	const [todoList, setTodoList] = useRecoilState(todoListState);
 	const index = todoList.findIndex(listItem => listItem === item);
 
