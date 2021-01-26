@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import todoListState from '../Atoms/todoListState';
 import { withStyles } from '@material-ui/core/styles';
@@ -45,11 +45,8 @@ const TodoItem = forwardRef((props, ref) => {
 
 	const deleteItem = () => {
 		const newList = removeItemAtIndex(todoList, index);
-		if (todoList.length >= 1) {
-			setTodoList(newList);
-		} else {
-			localStorage.clear();
-		}
+
+		setTodoList(newList);
 	};
 
 	const replaceItemAtIndex = (arr, index, newValue) => {
@@ -59,6 +56,14 @@ const TodoItem = forwardRef((props, ref) => {
 	const removeItemAtIndex = (arr, index) => {
 		return [...arr.slice(0, index), ...arr.slice(index + 1)];
 	};
+
+	useEffect(() => {
+		if (todoList.length > 0) {
+			localStorage.setItem('storedTodos', JSON.stringify(todoList));
+		} else {
+			localStorage.clear();
+		}
+	}, [todoList]);
 
 	return (
 		<div className='todoItem' ref={ref}>
