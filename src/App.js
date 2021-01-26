@@ -11,7 +11,11 @@ function App() {
 	// grab data from local storage
 	useEffect(() => {
 		const storedTodos = JSON.parse(localStorage.getItem('storedTodos'));
-		storedTodos && setTodoList([...storedTodos]);
+		console.log(storedTodos);
+		// storedTodos && setTodoList([...storedTodos]);
+		if (storedTodos) {
+			setTodoList([...storedTodos]);
+		}
 	});
 
 	return (

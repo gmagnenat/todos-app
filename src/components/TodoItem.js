@@ -45,8 +45,11 @@ const TodoItem = forwardRef((props, ref) => {
 
 	const deleteItem = () => {
 		const newList = removeItemAtIndex(todoList, index);
-
-		setTodoList(newList);
+		if (todoList.length >= 1) {
+			setTodoList(newList);
+		} else {
+			localStorage.clear();
+		}
 	};
 
 	const replaceItemAtIndex = (arr, index, newValue) => {
