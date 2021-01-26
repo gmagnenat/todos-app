@@ -1,6 +1,7 @@
-# A Todo application
+# A Todo application built with react
 ![iPhone X Screenshot](https://raw.githubusercontent.com/gmagnenat/todos-app/main/sshot.png)
 ## included
+- built with [React](https://reactjs.org/)
 - State management with [Recoil](https://recoiljs.org/)
 - Animation with [FlipMove](https://github.com/joshwcomeau/react-flip-move)
 - Local storage
@@ -24,4 +25,4 @@ npm run build
 
 // deploy -----
 ```
-__Deployed application__ : [https://todos-app-rho.vercel.app/](https://todos-app-rho.vercel.app/)
+__Deployed demo application__ : [https://todos-app-rho.vercel.app/](https://todos-app-rho.vercel.app/)
