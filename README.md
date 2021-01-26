@@ -1,4 +1,5 @@
 # A Todo application
+![iPhone X Screenshot](https://raw.githubusercontent.com/gmagnenat/todos-app/main/sshot.png)
 ## included
 - State management with [Recoil](https://recoiljs.org/)
 - Animation with [FlipMove](https://github.com/joshwcomeau/react-flip-move)
